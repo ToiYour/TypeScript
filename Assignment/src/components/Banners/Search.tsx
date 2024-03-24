@@ -1,11 +1,65 @@
-import React from "react";
-import Select from "../Select";
+import React, { useEffect } from "react";
+import { toast, Bounce } from "react-toastify";
+import Select from "./Select";
 import Button from "../Headers/Button";
 
 const Search = () => {
+  useEffect(() => {
+    const formSearch = document.querySelector("#formSearch");
+    formSearch?.addEventListener("submit", handleSubmit);
+  });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const noiXuatPhat = document.querySelector('select[name="start"]');
+    const noiDen = document.querySelector('select[name="destination"]');
+    const ngayDi = document.querySelector('select[name="dateOfDepartment"]');
+    if (!noiXuatPhat.value) {
+      toast.warn(`Vui lòng chọn nơi xuất phát !!!`, {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    }
+    if (!noiDen.value) {
+      toast.warn(`Vui lòng chọn nơi đến !!!`, {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    }
+    if (!ngayDi.value) {
+      toast.warn(`Vui lòng chọn ngày đi !!!`, {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    }
+  };
   return (
     <div className="search-banner-container">
-      <div className="wrapper-search flex flex-col sm:flex-row justify-center items-center p-4">
+      <form
+        id="formSearch"
+        method="post"
+        className="wrapper-search flex flex-col sm:flex-row justify-center items-center p-4"
+      >
         <div className="flex flex-col sm:flex-row justify-stretch items-center  border-2 border-gray-200 rounded-lg mb-4 mr-0 sm:mr-4  sm:mb-0 w-full">
           <div className=" flex  justify-start items-center w-full py-2 sm:py-0 border-b-2 sm:border-b-0 sm:border-r-2 border-gray-200">
             <div className="ml-4">
@@ -27,7 +81,11 @@ const Search = () => {
               </svg>
             </div>
             <div className="mx-2 pb-1  min-w-[120px]">
-              <Select title="Nơi xuất phát" titleOption="--Xuất phát--" />
+              <Select
+                title="Nơi xuất phát"
+                titleOption="--Xuất phát--"
+                name="start"
+              />
             </div>
           </div>
           <div className=" flex  justify-start items-center w-full py-2 sm:py-0 border-b-2 sm:border-b-0 sm:border-r-2 border-gray-200">
@@ -51,7 +109,11 @@ const Search = () => {
             </div>
 
             <div className="mx-2 pb-1 min-w-[120px]">
-              <Select title="Nơi đến" titleOption="--Nơi đến--" />
+              <Select
+                title="Nơi đến"
+                titleOption="--Nơi đến--"
+                name="destination"
+              />
             </div>
           </div>
           <div className=" flex  justify-start items-center w-full py-2 sm:py-0 border-b-2 sm:border-b-0 sm:border-r-2 border-gray-200">
@@ -71,7 +133,11 @@ const Search = () => {
             </div>
 
             <div className="mx-2 pb-1  min-w-[120px]">
-              <Select title="Ngày đi" titleOption="--Ngày đi--" />
+              <Select
+                title="Ngày đi"
+                titleOption="--Ngày đi--"
+                name="dateOfDepartment"
+              />
             </div>
           </div>
           <div className="py-4 sm:py-0">
@@ -95,7 +161,7 @@ const Search = () => {
         {/* <button className="w-full inline-block whitespace-nowrap rounded     text-sm font-medium  hover:bg-indigo-600 hover:text-white focus:outline-none focus:ring active:bg-indigo-500">
           Tìm kiếm
         </button> */}
-      </div>
+      </form>
     </div>
   );
 };

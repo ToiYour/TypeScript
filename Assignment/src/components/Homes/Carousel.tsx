@@ -1,4 +1,5 @@
-import Card from "../Card";
+import Card from "./Card";
+
 const Carousel = () => {
   return (
     <div className="carousel max-w-[980px] h-[211px] relative overflow-hidden">

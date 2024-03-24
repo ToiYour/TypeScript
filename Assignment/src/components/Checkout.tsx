@@ -1,10 +1,6 @@
-import Footer from "./Footers";
-import Header from "./Headers";
-
 const Checkout = () => {
   return (
     <>
-      <Header />
       <div className="max-w-screen-lg mx-auto font-[sans-serif] bg-gray-50 p-6 min-h-screen">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-extrabold text-[#333] text-center">
@@ -21,7 +17,7 @@ const Checkout = () => {
                     type="radio"
                     className="w-5 h-5 cursor-pointer"
                     id="card"
-                    defaultChecked=""
+                    defaultChecked="true"
                   />
                   <label
                     htmlFor="card"
@@ -64,32 +60,22 @@ const Checkout = () => {
               </div>
               <form className="mt-8">
                 <div className="grid gap-6">
-                  <div className="grid sm:grid-cols-3 gap-6">
+                  <div className="grid-cols-1 grow">
                     <input
                       type="number"
-                      placeholder="Card number"
-                      className="px-4 py-3.5 bg-white text-[#333] w-full text-sm border rounded-md focus:border-[#007bff] outline-none"
-                    />
-                    <input
-                      type="number"
-                      placeholder="EXP."
-                      className="px-4 py-3.5 bg-white text-[#333] w-full text-sm border rounded-md focus:border-[#007bff] outline-none"
-                    />
-                    <input
-                      type="number"
-                      placeholder="CVV"
+                      placeholder="Số thẻ"
                       className="px-4 py-3.5 bg-white text-[#333] w-full text-sm border rounded-md focus:border-[#007bff] outline-none"
                     />
                   </div>
                   <div className="sm:col-span-2 grid sm:grid-cols-2 gap-6">
                     <input
                       type="text"
-                      placeholder="Name of card holder"
+                      placeholder="Tên của chủ thẻ"
                       className="px-4 py-3.5 bg-white text-[#333] w-full text-sm border rounded-md focus:border-[#007bff] outline-none"
                     />
                     <input
                       type="number"
-                      placeholder="Postal code"
+                      placeholder="Mã"
                       className="px-4 py-3.5 bg-white text-[#333] w-full text-sm border rounded-md focus:border-[#007bff] outline-none"
                     />
                   </div>
@@ -100,7 +86,7 @@ const Checkout = () => {
               <h3 className="text-xl font-bold text-[#333]">Đơn hàng</h3>
               <ul className="text-[#333] mt-6 space-y-4">
                 <li className="flex flex-wrap gap-4 text-sm">
-                  Giảm giá (20%) <span className="ml-auto font-bold">0đ</span>
+                  Hà Nội-Hải Phòng<span className="ml-auto font-bold">0đ</span>
                 </li>
 
                 <li className="flex flex-wrap gap-4 text-base font-bold border-t pt-4">
@@ -114,12 +100,11 @@ const Checkout = () => {
               type="button"
               className="px-6 py-3.5 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700"
             >
-              Xác nhận
+              Thanh toán
             </button>
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

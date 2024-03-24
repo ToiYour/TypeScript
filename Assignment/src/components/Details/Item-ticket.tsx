@@ -19,8 +19,8 @@ const ItemTicket = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M11.515 1.66667V3.88916C10.9042 3.88916 10.4042 4.38916 10.4042 5C10.4042 5.61166 10.9042 6.11166 11.515 6.11166V8.33333C11.515 8.945 11.015 9.445 10.4042 9.445H1.51501C0.904175 9.445 0.404175 8.945 0.404175 8.33333V6.11166C0.698897 6.11233 0.981811 5.99589 1.19068 5.78795C1.39955 5.58002 1.51726 5.29764 1.51792 5.00291C1.51859 4.70819 1.40215 4.42528 1.19421 4.21641C0.986284 4.00754 0.703897 3.88983 0.409175 3.88916V1.66667C0.410008 1.05 0.904175 0.555832 1.51501 0.555832H10.4042C11.015 0.555832 11.515 1.05 11.515 1.66667ZM5.45251 7.47083C5.43917 7.575 5.51084 7.66666 5.60417 7.66666C5.6322 7.66624 5.65954 7.65798 5.68311 7.64281C5.70668 7.62764 5.72552 7.60617 5.73751 7.58083L5.94084 7.185C6.19167 6.69666 6.63417 5.83583 7.27001 4.60333C7.32834 4.46417 7.27001 4.4075 7.16334 4.4075H6.22834L6.46751 2.52917C6.48084 2.425 6.40917 2.33333 6.31584 2.33333C6.28788 2.33404 6.26066 2.34242 6.23714 2.35756C6.21362 2.37269 6.19473 2.39401 6.18251 2.41917L5.37251 4.00167C5.09167 4.54917 4.85917 5.00166 4.67667 5.36166L4.67584 5.36333C4.66251 5.38416 4.53167 5.5925 4.75917 5.5925H5.69251L5.45251 7.47083Z"
                 fill="white"
               />
@@ -31,7 +31,7 @@ const ItemTicket = () => {
       </div>
       <div className="info__ticket-container ml-4 w-full">
         <div className="">
-          <div className="top-info flex justify-between items-start w-full">
+          <div className="top-info flex flex-col md:flex-row justify-between items-start w-full">
             <h2>Hải Phòng Travel (Đất Cảng)</h2>
             <div className="flex flex-col">
               <p className="text-xl text-[#2474E5] font-semibold mb-2">
@@ -44,7 +44,7 @@ const ItemTicket = () => {
               </span>
             </div>
           </div>
-          <div className="bottom-info flex justify-between items-center mt-4">
+          <div className="bottom-info flex flex-col md:flex-row  justify-between items-start md:items-center mt-4">
             <div className="relative pl-4">
               <div className="absolute left-0 top-[6px]">
                 <svg
@@ -94,7 +94,9 @@ const ItemTicket = () => {
               </div>
             </div>
             <div className="text-right">
-              <p className="text-sm text-[#484848]">Còn 11 chỗ trống</p>
+              <p className="text-sm text-[#484848] my-2 md:my-0 text-start md:text-right">
+                Còn 11 chỗ trống
+              </p>
               <div className="my-2">
                 <Button
                   title="Chọn chuyến"

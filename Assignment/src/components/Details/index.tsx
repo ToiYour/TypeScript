@@ -1,16 +1,13 @@
 import React from "react";
-import Header from "../Headers";
-import Footer from "../Footers";
 import { SVGTabs } from "../Banners/Tabs";
-import Search from "../Banners/Search";
 import ItemTab from "../Banners/Item-tab";
-import Filter from "../Filter";
+import Search from "../Banners/Search";
+import Filter from "./Filter";
 import ItemTicket from "./Item-ticket";
 
 const DetailPage = () => {
   return (
     <>
-      <Header />
       <main className="bg-[#F2F2F2] pb-4">
         <div className="container max-w-screen-lg mx-auto ">
           <div className="search py-5">
@@ -46,7 +43,7 @@ const DetailPage = () => {
           </div>
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 justify-between items-start">
             <Filter />
-            <div className="grow grid  gap-y-4 ">
+            <div className="grow grid mx-auto md:mx-0  gap-y-4 ">
               <ItemTicket />
               <ItemTicket />
               <ItemTicket />
@@ -60,7 +57,6 @@ const DetailPage = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 };

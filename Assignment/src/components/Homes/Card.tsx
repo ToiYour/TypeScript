@@ -1,4 +1,3 @@
-import React from "react";
 const VND = new Intl.NumberFormat("vi-VN", {
   style: "currency",
   currency: "VND",

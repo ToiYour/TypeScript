@@ -1,12 +1,8 @@
-import Carousel from "./Carousel";
-import Header from "../Headers";
 import Banner from "../Banners";
-import Footer from "../Footers";
-
+import Carousel from "./Carousel";
 const Home = () => {
   return (
     <>
-      <Header />
       <Banner />
       <main className="mb-16">
         <div className="container max-w-screen-lg  mt-12 mx-auto px-5 md:px-0">
@@ -14,7 +10,6 @@ const Home = () => {
           <Carousel />
         </div>
       </main>
-      <Footer />
     </>
   );
 };
