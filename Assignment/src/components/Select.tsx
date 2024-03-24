@@ -16,7 +16,7 @@ const Select = (props: props) => {
       <select
         name="HeadlineAct"
         id="HeadlineAct"
-        className=" w-full font-medium "
+        className=" w-full font-medium min-w-[125px]:"
       >
         <option value="" hidden>
           {props.titleOption}

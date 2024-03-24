@@ -6,7 +6,7 @@ const Header = () => {
       <div className="mx-auto px-5 py-1 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex-1 md:flex md:items-center md:gap-12">
-            <a className="block text-teal-600" href="#">
+            <a className="block text-teal-600" href="/">
               <img src="./img/logo.png" alt="" />
             </a>
           </div>

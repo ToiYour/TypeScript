@@ -26,7 +26,7 @@ const Search = () => {
                 />
               </svg>
             </div>
-            <div className="mx-2 pb-1 grow ">
+            <div className="mx-2 pb-1  min-w-[120px]">
               <Select title="Nơi xuất phát" titleOption="--Xuất phát--" />
             </div>
           </div>
@@ -50,7 +50,7 @@ const Search = () => {
               </svg>
             </div>
 
-            <div className="mx-2 pb-1 ">
+            <div className="mx-2 pb-1 min-w-[120px]">
               <Select title="Nơi đến" titleOption="--Nơi đến--" />
             </div>
           </div>
@@ -70,7 +70,7 @@ const Search = () => {
               </svg>
             </div>
 
-            <div className="mx-2 pb-1 ">
+            <div className="mx-2 pb-1  min-w-[120px]">
               <Select title="Ngày đi" titleOption="--Ngày đi--" />
             </div>
           </div>

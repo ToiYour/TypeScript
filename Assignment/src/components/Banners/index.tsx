@@ -1,4 +1,4 @@
-import Tabs from "./Tabs";
+import { Tabs } from "./Tabs";
 import Search from "./Search";
 import Feature from "./Feature";
 

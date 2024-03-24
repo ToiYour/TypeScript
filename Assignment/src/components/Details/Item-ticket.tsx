@@ -103,7 +103,7 @@ const ItemTicket = () => {
                   color="text-[#484848]"
                 />
               </div>
-              <h3 className="font-semibold text-black">
+              <h3 className="hidden md:inline-block font-semibold text-black">
                 Không cần thanh toán trước
               </h3>
             </div>

@@ -44,7 +44,7 @@ const DetailPage = () => {
               <Search />
             </div>
           </div>
-          <div className="flex justify-between items-start">
+          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 justify-between items-start">
             <Filter />
             <div className="grow grid  gap-y-4 ">
               <ItemTicket />
