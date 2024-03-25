@@ -89,7 +89,6 @@ const Header = () => {
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     stroke="currentColor"
-                    strokeWidth="2"
                   >
                     <path
                       d="M2.21999 18.3052L11.22 10.3052M11.22 10.3052L20.22 2.30518M11.22 10.3052L2.21999 2.30518M11.22 10.3052L20.22 18.3052"
