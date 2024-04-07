@@ -1,19 +1,24 @@
+import { Link } from "react-router-dom";
+
 const Nav = () => {
   return (
     <nav aria-label="Global" className="hidden md:block ease-in-out">
       <ul className="flex items-center gap-6 text-sm ">
         <li className="py-1 md:py-0">
-          <a className="text-white transition hover:text-gray-500/75" href="#">
+          <Link
+            className="text-white transition font-bold"
+            to={"/order/search"}
+          >
             Quản lý đơn hàng
-          </a>
+          </Link>
         </li>
         <li className="py-1 md:py-0">
-          <a className="text-white transition hover:text-gray-500/75" href="#">
+          <a className="text-white transition font-bold" href="#">
             Mở bán vé trên Vexere
           </a>
         </li>
         <li className="pb-3 md:pb-0">
-          <a className="text-white transition hover:text-gray-500/75" href="#">
+          <a className="text-white transition font-bold" href="#">
             Trở thành đối tác
           </a>
         </li>

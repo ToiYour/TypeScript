@@ -6,6 +6,7 @@ import Checkout from "./components/Checkout";
 import Layout from "./Layout";
 import Modal from "./components/Modal";
 import NoPage from "./components/NoPage";
+import RouterAdmin from "./components/Admins/Router";
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="*" element={<NoPage />} />
           </Route>
+          {/* Admin */}
+          <Route path="/admin/*" element={<RouterAdmin />} />
         </Routes>
       </BrowserRouter>
       <ToastContainer />

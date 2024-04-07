@@ -1,6 +1,20 @@
-import Button from "../Headers/Button";
+import moment from "moment";
+import { Link } from "react-router-dom";
+import { ITripItem } from "../../interfaces";
 
-const ItemTicket = () => {
+const ItemTicket = (props: ITripItem) => {
+  const money = new Intl.NumberFormat("vi-VN", {
+    style: "currency",
+    currency: "VND",
+  });
+  const endTime = (time: string) => {
+    const newTime = moment
+      .utc(time)
+      .add(1, "hour")
+      .add(30, "minutes")
+      .format("HH:mm");
+    return newTime;
+  };
   return (
     <div className="item-ticket w-full flex justify-start items-center px-4 pt-14 pb-4 border-2  rounded-lg border-gray-200 bg-white">
       <div className="image__ticket relative	before:content-[''] before:absolute before:top-8 before:-left-2 before:w-2 before:h-3 before:bg-[#1D8046]">
@@ -32,10 +46,12 @@ const ItemTicket = () => {
       <div className="info__ticket-container ml-4 w-full">
         <div className="">
           <div className="top-info flex flex-col md:flex-row justify-between items-start w-full">
-            <h2>Hải Phòng Travel (Đất Cảng)</h2>
+            <h2>
+              {props.fromStationId.name} - {props.toStationId.name}
+            </h2>
             <div className="flex flex-col">
               <p className="text-xl text-[#2474E5] font-semibold mb-2">
-                Từ <span>230.000đ</span>
+                Từ <span>{money.format(props.price)}</span>
               </p>
               <span className="coupon text-xs text-center  py-1 border-2 border-[#27AE60] rounded-md  relative ">
                 <span className="absolute rounded-e-lg  border-2 border-l-0 border-[#27AE60] -left-[1px] top-2 w-1 h-2 content-[''] bg-[#EEFBF4]  "></span>
@@ -85,24 +101,31 @@ const ItemTicket = () => {
               </div>
               <div className="">
                 <p className="font-semibold text-xl">
-                  19:00 • <span className="font-normal text-sm">Hà Nội</span>
+                  {moment.utc(props.startTime).format("HH:mm")} •{" "}
+                  <span className="font-normal text-sm">
+                    {props.fromStationId.name}
+                  </span>
                 </p>
                 <span className="text-sm text-[#707070]">1h30m</span>
                 <p className="font-semibold text-xl text-[#707070]">
-                  19:00 • <span className="font-normal text-sm">Hải Phòng</span>
+                  {endTime(props.startTime)} •{" "}
+                  <span className="font-normal text-sm">
+                    {props.toStationId.name}
+                  </span>
                 </p>
               </div>
             </div>
             <div className="text-right">
               <p className="text-sm text-[#484848] my-2 md:my-0 text-start md:text-right">
-                Còn 11 chỗ trống
+                Còn {props.seats} chỗ trống
               </p>
               <div className="my-2">
-                <Button
-                  title="Chọn chuyến"
-                  bgColor="bg-[#FFC700]"
-                  color="text-[#484848]"
-                />
+                <Link
+                  to={`/booking/${props._id}`}
+                  className="inline-block rounded px-14 py-2  border border-slate-300 text-sm bg-[#FFC700] font-medium text-[#484848] hover:bg-[#366D91] hover:text-white focus:outline-none focus:ring active:bg-indigo-500"
+                >
+                  Đặt vé
+                </Link>
               </div>
               <h3 className="hidden md:inline-block font-semibold text-black">
                 Không cần thanh toán trước

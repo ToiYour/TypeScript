@@ -73,3 +73,6 @@
     opacity: 0;
   }
 }
+nav a.active {
+  @apply bg-gray-200;
+}

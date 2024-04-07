@@ -11,7 +11,7 @@ const Header = () => {
     btnOpenMobile?.addEventListener("click", handleNav);
   });
   const openModal = () => {
-    const modal = document.querySelector(".main-modal");
+    const modal = document.querySelector(".main-modal") as HTMLElement;
     modal.classList.remove("fadeOut");
     modal.classList.add("fadeIn");
     modal.style.display = "flex";
@@ -19,7 +19,7 @@ const Header = () => {
   const handleNav = () => {
     const iconcloseMobile = document.querySelector(".close-mobile");
     const iconOpenMoblile = document.querySelector(".btn-open-nav");
-    const nav = document.querySelector("header nav");
+    const nav = document.querySelector("header nav") as HTMLElement;
     const ul = nav.querySelector("ul");
     if (iconOpenMoblile?.classList.contains("inline")) {
       nav?.classList.replace("hidden", "flex");

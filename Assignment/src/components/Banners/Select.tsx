@@ -1,19 +1,22 @@
 import { useEffect, useState } from "react";
+import { getAllStation } from "../../api/station";
+import { IStation } from "../../interfaces";
 
 type props = {
   title: string;
   titleOption: string;
   name: string;
+  register: object;
+  // data: IStation[];
 };
 
 const Select = (props: props) => {
-  const [provinceCity, setProvinceCity] = useState([]);
+  const [stations, setStations] = useState<IStation[]>([]);
   useEffect(() => {
-    const getProvinceCity = async () => {
-      const response = await (await fetch(`./tinh_tp.json`)).json();
-      setProvinceCity(response.provinceCity);
-    };
-    getProvinceCity();
+    (async () => {
+      const { data } = await getAllStation();
+      setStations(data);
+    })();
   }, []);
   return (
     <>
@@ -25,15 +28,15 @@ const Select = (props: props) => {
       </label>
       <select
         name={props.name}
-        id="HeadlineAct"
+        {...props.register}
         className=" w-full font-medium min-w-[125px] outline-none"
       >
         <option value="" hidden>
           {props.titleOption}
         </option>
-        {provinceCity.map((local) => (
-          <option key={local.name} value={local?.name}>
-            {local?.name}
+        {stations.map((station) => (
+          <option value={station._id} key={station._id}>
+            {station?.name}
           </option>
         ))}
       </select>
