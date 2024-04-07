@@ -46,11 +46,13 @@ router.get("/search", async (req, res) => {
       defaultSort.type = req.query.sort;
       defaultSort.col = req.query.col;
     }
-    const nextDays = moment(req.query.startTime).add(1, "day");
+    // const nextDays = moment(req.query.startTime).add(1, "day");
+    const nextDays = moment(req.query.startTime).endOf("day");
+    console.log(nextDays);
     const data = await Trip.find({
       fromStationId: req.query.fromStationId,
       toStationId: req.query.toStationId,
-      startTime: { $gte: req.query.startTime, $lt: nextDays },
+      startTime: { $gte: req.query.startTime, $lte: nextDays },
     })
       .populate("fromStationId toStationId busHouseId busStationId")
       .sort({ [defaultSort.col]: defaultSort.type });
